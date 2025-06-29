@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogas Team Fight Center - Merchandising</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/merch.css" />
+    <link rel="stylesheet" href="../CSS/menu.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Bogas Team Fight Center</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./espaco.html">Espaço</a>
+        <a href="./horarios.html">Horários</a>
+        <div class="dropdown">
+          <a href="#">Eventos</a>
+          <div class="dropdown-content">
+            <a href="./graduacoes.html">Graduações</a>
+            <a href="./combates.html">Combates</a>
+            <a href="./treinadores.html#muaythai">Convívios</a>
+          </div>
+        </div>
+        <a href="./contactos.html">Contactos</a>
+        <a href="./patrocinadores.html">Patrocinadores</a>
+      </nav>
+    </header>
+    <div class="nav-bg"></div>
+
+    <main class="merchandising">
+      <div class="item" data-product="Fato Treino Verde">
+        <img src="../img/fato treino verde.png" alt="Fato treino verde" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Fato Treino - 100€</div>
+      </div>
+      <div class="item" data-produto="Fato Treino Laranja - 100€">
+        <img src="../img/fatotreinolaranja.png" alt="Fato treino laranja" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Fato Treino - 100€</div>
+      </div>
+      <div class="item" data-produto="Polo - 30€">
+        <img src="../img/polo.png" alt="Polo" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Polo - 30€</div>
+      </div>
+      <div class="item" data-produto="Chapéu - 30€">
+        <img src="../img/CHAPEU.png" alt="Chapéu" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Chapéu - 30€</div>
+      </div>
+      <div class="item" data-produto="T-shirt Preta - 15€">
+        <img src="../img/tshirtpreta.png" alt="T-shirt preta" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">T-shirt Preta - 15€</div>
+      </div>
+      <div class="item" data-produto="T-shirt Branca - 15€">
+        <img src="../img/tshirtbranca.png" alt="T-shirt branca" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">T-shirt Branca - 15€</div>
+      </div>
+      <div class="item" data-produto="Sticker Preto - 2€">
+        <img src="../img/sticket preto.png" alt="Sticker preto" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Sticker Preto - 2€</div>
+      </div>
+      <div class="item" data-produto="Sticker Branco - 2€">
+        <img src="../img/sticker branco.png" alt="Sticker branco" />
+        <div class="overlay">Encomendar</div>
+        <div class="price">Sticker Branco - 2€</div>
+      </div>
+    </main>
+
+    <!-- Modal de Tamanho -->
+    <div class="modal hidden" id="size-modal">
+      <div class="modal-content">
+        <span class="close-button" id="modal-close">&times;</span>
+        <h2 id="modal-product-name">Produto</h2>
+
+        <div class="custom-dropdown" id="modal-dropdown">
+          <div class="dropdown-selected">
+            Selecione o tamanho <i class="bx bx-chevron-down arrow"></i>
+          </div>
+          <ul class="dropdown-list">
+            <li class="dropdown-option" data-value="S">S</li>
+            <li class="dropdown-option" data-value="M">M</li>
+            <li class="dropdown-option" data-value="L">L</li>
+            <li class="dropdown-option" data-value="XL">XL</li>
+          </ul>
+        </div>
+
+        <button id="confirm-size">Confirmar</button>
+      </div>
+    </div>
+    <script src="../JS/merch.js" defer></script>
+    <script src="../JS/menu.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  </body>
+</html>
