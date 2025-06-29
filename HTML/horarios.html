@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogas Team Fight Center - Horários</title>
+    <link rel="stylesheet" href="../CSS/horarios.css" />
+    <link rel="stylesheet" href="../CSS/menu.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Bogas Team Fight Center</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./espaco.html">Espaço</a>
+        <div class="dropdown">
+          <a href="#">Eventos</a>
+          <div class="dropdown-content">
+            <a href="./graduacoes.html">Graduações</a>
+            <a href="./combates.html">Combates</a>
+            <a href="./treinadores.html#muaythai">Convívios</a>
+          </div>
+        </div>
+        <a href="./contactos.html">Contactos</a>
+        <a href="./merchandising.html">Merch</a>
+        <a href="./patrocinadores.html">Patrocinadores</a>
+      </nav>
+    </header>
+
+    <div class="nav-bg"></div>
+    <div id="days-container"></div>
+    <div id="modal-bg"></div>
+
+    <div
+      id="class-details"
+      class="hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="details-title"
+    >
+      <h2 id="details-title">Detalhes da Aula</h2>
+      <p id="details-content"></p>
+      <button onclick="closeDetails()" id="fechar" aria-label="Fechar detalhes">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <script src="../JS/menu.js"></script>
+    <script src="../JS/horarios.js"></script>
+  </body>
+</html>

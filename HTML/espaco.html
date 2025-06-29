@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bogas Team Fight Center - Espaço</title>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../CSS/espaco.css" />
+    <link rel="stylesheet" href="../CSS/menu.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Bogas Team Fight Center</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./horarios.html">Horários</a>
+        <div class="dropdown">
+          <a href="#">Eventos</a>
+          <div class="dropdown-content">
+            <a href="./graduacoes.html">Graduações</a>
+            <a href="./combates.html">Combates</a>
+            <a href="./treinadores.html#muaythai">Convívios</a>
+          </div>
+        </div>
+        <a href="./contactos.html">Contactos</a>
+        <a href="./merchandising.html">Merch</a>
+        <a href="./patrocinadores.html">Patrocinadores</a>
+      </nav>
+    </header>
+
+    <main class="espaco-container">
+      <div class="item" data-espaco="main">
+        <img src="../img/espaço.webp" alt="Sala de Treino" />
+        <div class="descricao">Ver Mais ...</div>
+      </div>
+    </main>
+
+    <section class="slider-section hidden">
+      <button class="close-slider" aria-label="Fechar Slider">✖</button>
+      <div class="slider">
+        <div class="slider-wrapper" id="sliderWrapper"></div>
+        <button class="slider-btn prev">
+          <i class="bx bx-chevron-left"></i>
+        </button>
+        <button class="slider-btn next">
+          <i class="bx bx-chevron-right"></i>
+        </button>
+        <div class="slider-caption" id="sliderCaption"></div>
+        <div class="slider-indicators" id="sliderIndicators"></div>
+      </div>
+    </section>
+
+    <script src="../JS/espaco.js"></script>
+    <script src="../JS/menu.js"></script>
+  </body>
+</html>
