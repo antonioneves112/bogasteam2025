@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =================== HEADER =================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px; /* espaço abaixo do header fixo */
+  padding-bottom: 100px; /* mesmo espaço até ao fundo */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgba(3, 3, 3, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid white;
+  z-index: 1000;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(220, 224, 219),
+    transparent
+  );
+  transition: 2s;
+}
+
+.header:hover::before {
+  left: 100%;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 800;
+  font-family: "Orbitron", sans-serif;
+  text-decoration: none;
+  cursor: default;
+  z-index: 1002;
+  color: #f8f9f8;
+  text-shadow: 0 0 2px lab(99.73% 0.33 0.11), 0 0 7px lab(0% 0 0),
+    0 0 5px lab(98.91% 1.33 0.46), 0 0 5px lab(96.65% -3.04 2.18);
+}
+
+#menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  z-index: 1002;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 35px;
+}
+
+.navbar a {
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: rgb(162, 217, 154);
+  outline: none;
+}
+
+/* Dropdown */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.dropdown-content {
+  position: fixed;
+  top: 72px; /* altura exata do header (20px padding top + 32px linha de conteúdo + 20px padding bottom) */
+  left: auto;
+  background-color: rgba(3, 3, 3, 0.95);
+  min-width: 180px;
+  flex-direction: column;
+  border-top: none;
+  border-bottom: 2px solid white;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  z-index: 1001;
+  display: none;
+}
+
+.dropdown-content a {
+  padding: 14px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  line-height: 1;
+  border-bottom: 1px solid white; /* ← ADICIONA ESTA LINHA */
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(2, 2, 2, 0.1);
+  color: rgb(162, 217, 154);
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  /*HEADER*/
+  .header {
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    overflow: visible; /* ← Necessário para deixar dropdown visível */
+    z-index: 1000;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    z-index: 2000; /* ↑ Fica acima de qualquer coisa como nav-bg */
+    max-height: 80vh; /* Limita a altura e ativa scroll */
+    overflow-y: auto;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    margin: 12px 0;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  #menu-icon {
+    display: block;
+    z-index: 3000;
+  }
+
+  .nav-bg {
+    display: none; /* ← Esconde em mobile se estiver a interferir */
+  }
+
+  .dropdown-content {
+    position: relative; /* ← Em mobile, fica como parte da flow */
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-left: 20px;
+    z-index: 0;
+    top: 100%;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown > a::after {
+    content: " ▼";
+    font-size: 0.7em;
+    margin-left: 6px;
+  }
+}
