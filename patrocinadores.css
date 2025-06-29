@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(2, 2, 2);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*SPONSORS*/
+.sponsors-section {
+  margin-top: 120px;
+  text-align: center;
+  color: white;
+}
+
+.sponsors-section h1 {
+  font-size: 40px;
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.sponsor-desc {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+  gap: 20px;
+  padding: 20px;
+  background: rgb(5, 5, 5);
+  justify-content: center; /* centraliza o grid */
+  max-width: 1000px; /* opcional para limitar largura */
+  margin: 0 auto;
+}
+
+.sponsors img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border: 1px solid #deecdb;
+  box-shadow: 0 0 5px #eaf0e9; /* brilho neon */
+}
+
+.sponsors img:hover {
+  border: 3px solid #000000;
+  box-shadow: 0 0 15px #0b0b0b; /* brilho neon */
+}
+
+.sponsors img:hover {
+  transform: scale(1.05);
+}
+
+p {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+  .sponsors {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .sponsors {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
+  }
+}
+
+@media (max-width: 400px) {
+  .sponsors {
+    grid-template-columns: 1fr; /* 1 coluna no celular pequeno */
+  }
+}

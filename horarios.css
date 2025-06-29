@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(2, 2, 2);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
+
+/*QUADRO AULAS*/
+#modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  display: none;
+}
+
+/* Mostrar modal e fundo juntos */
+#modal-bg.active,
+#class-details.active {
+  display: block;
+}
+
+/* Corrigir posição do botão fechar */
+#class-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  background: rgba(248, 238, 238, 0.95);
+  padding: 40px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  max-width: 90%;
+  z-index: 999;
+  display: none;
+}
+
+#class-details h2 {
+  color: rgb(162, 217, 154);
+  font-family: "Orbitron", sans-serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#fechar:hover {
+  color: rgb(162, 217, 154);
+}
+
+#details-content h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 28px;
+  color: rgb(162, 217, 154);
+  margin-bottom: 20px;
+}
+
+#details-content p strong {
+  font-family: "Orbitron", sans-serif;
+  color: rgb(162, 217, 154);
+  font-weight: 700;
+}
+
+#days-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap; /* sem quebra de linha */
+  gap: 40px; /* espaçamento */
+  justify-content: space-between; /* distribuir os 3 quadros */
+}
+
+.day {
+  width: 400px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgb(162, 217, 154);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(162, 217, 154, 0.4);
+  flex-shrink: 0;
+  height: auto; /* permite crescer conforme conteúdo */
+  aspect-ratio: auto; /* remove o aspecto fixo */
+}
+
+.day:hover {
+  box-shadow: 0 0 25px rgba(162, 217, 154, 0.8);
+}
+
+.day h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  word-wrap: break-word;
+  color: rgb(162, 217, 154);
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.class-item {
+  font-size: 20px;
+  font-family: "Orbitron", sans-serif;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(162, 217, 154);
+  cursor: pointer;
+  color: white;
+  margin-bottom: 15px;
+  width: 100%; /* ocupa toda largura do pai */
+  box-sizing: border-box; /* inclui padding e borda na largura */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.class-item:hover {
+  background: rgb(162, 217, 154);
+  color: #000;
+  font-weight: bold;
+}
+
+.class-item .modalidade {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 20px; /* mantém o tamanho da classe */
+  color: inherit;
+  margin-bottom: 8px; /* espaçamento entre modalidade e horário */
+}
+
+.class-item .horario {
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  color: inherit;
+}
+
+#class-details {
+  background: rgba(20, 20, 20, 0.95);
+  border: 2px solid rgb(162, 217, 154);
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 8px;
+  display: none;
+  font-size: 20px;
+  max-width: 90%;
+  z-index: 999;
+}
+
+.hidden {
+  text-align: center;
+  width: 600px;
+  height: 250px;
+  display: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.hidden h2 {
+  color: rgb(0, 0, 0);
+  font-family: "Orbitron", sans-serif;
+}
+
+button {
+  background-color: rgb(235, 226, 226);
+  border: none;
+  padding: 7px 7px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+button i {
+  font-size: 18px;
+  border-color: black;
+}
+
+#fechar {
+  margin-top: 10px;
+}
+
+p {
+  font-family: "Orbitron", sans-serif;
+}
+
+@media (max-width: 768px) {
+  /*MAPA AULAS*/
+  #days-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .day {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .day h3 {
+    font-size: 28px;
+  }
+
+  #class-details {
+    font-size: 18px;
+    padding: 20px;
+  }
+}

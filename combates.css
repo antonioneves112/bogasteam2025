@@ -1,0 +1,264 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  padding-top: 90px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.graduacoes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.item {
+  width: 300px; /* Dobro da largura */
+  background: #111;
+  border: 2px solid #9ce69c;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #9ce69c;
+}
+
+.item img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.descricao {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  padding: 12px 10px 16px;
+  background: #1a1a1a;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* Slider Section */
+.slider-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.slider {
+  position: relative;
+  width: 90vw;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 255, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slider-wrapper img,
+.slider-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
+  flex: 0 0 100%;
+  transition: opacity 0.4s ease-in-out;
+  user-select: none;
+  pointer-events: none;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  color: #9ce69c;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: #9ce69c;
+  color: #000;
+}
+
+.slider-btn.prev {
+  left: 16px;
+}
+
+.slider-btn.next {
+  right: 16px;
+}
+
+.slider-caption {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #9ce69c;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  animation: fadeInUp 0.5s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Indicadores */
+.slider-indicators {
+  position: absolute;
+  bottom: 80px; /* Aumentado para mais distância da legenda */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.slider-indicators button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #9ce69c;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 5px; /* mantém todos elevados igualmente */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-indicators button.active {
+  background-color: #9ce69c;
+  transform: scale(1.2);
+}
+
+/* Botão fechar */
+.close-slider {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: #9ce69c;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-slider:hover {
+  transform: scale(1.3);
+  color: #0f0;
+}
+
+/* Esconder elemento */
+.hidden {
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .graduacoes-container {
+    gap: 20px;
+  }
+
+  .item {
+    width: 720px; /* Dobro da largura */
+    background: #111;
+    border: 2px solid #9ce69c;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item img {
+    width: 100%;
+    height: 480px; /* Dobro da altura */
+    object-fit: cover;
+    display: block;
+  }
+
+  .slider {
+    width: 95vw;
+    aspect-ratio: 4 / 3;
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.6rem;
+  }
+
+  .slider-caption {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .slider-indicators {
+    bottom: 70px;
+  }
+
+  .slider-indicators button {
+    width: 14px;
+    height: 14px;
+  }
+}
