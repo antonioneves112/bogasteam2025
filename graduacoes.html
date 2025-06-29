@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduações - Bogas Team Fight Center</title>
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/graduacoes.css" />
+    <link rel="stylesheet" href="../CSS/menu.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Bogas Team Fight Center</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+        <a href="./home.html">Home</a>
+        <a href="./espaco.html">Espaço</a>
+        <a href="./horarios.html">Horários</a>
+        <div class="dropdown">
+          <a href="#">Eventos</a>
+          <div class="dropdown-content">
+            <a href="./combates.html">Combates</a>
+            <a href="./treinadores.html">Convívios</a>
+          </div>
+        </div>
+        <a href="./contactos.html">Contactos</a>
+        <a href="./merchandising.html">Merch</a>
+        <a href="./patrocinadores.html">Patrocinadores</a>
+      </nav>
+    </header>
+
+    <main class="graduacoes-container">
+      <div class="item" data-graduacao="2024">
+        <img src="../img/graduacoes2024/grupo2024.jpg" alt="Graduação 2024" />
+        <div class="descricao">26/05/2024</div>
+      </div>
+      <div class="item" data-graduacao="2025">
+        <img
+          src="../img/graduacoes2025/graduacao2025.jpg"
+          alt="Graduação 2025"
+        />
+        <div class="descricao">26/01/2025</div>
+      </div>
+
+      <section class="slider-section hidden" aria-label="Slider de Graduações">
+        <button class="close-slider" aria-label="Fechar Slider">✖</button>
+        <div class="slider">
+          <div class="slider-wrapper" id="sliderWrapper"></div>
+          <button class="slider-btn prev" aria-label="Slide Anterior">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          <button class="slider-btn next" aria-label="Próximo Slide">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+          <div class="slider-caption" id="sliderCaption"></div>
+          <div class="slider-indicators" id="sliderIndicators"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../JS/graduacoes.js"></script>
+    <script src="../JS/menu.js"></script>
+  </body>
+</html>
